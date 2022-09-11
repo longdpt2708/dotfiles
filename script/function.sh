@@ -2,7 +2,7 @@ function install_by_pacman {
   pacman -Qs $1 &> /dev/null
   if [ $? -ne 0 ] ; then
     echo "Installing: ${1}..."
-    sudo pacman -S --needed --no-confirm $1
+    sudo pacman -S --needed --noconfirm $1
   else
     echo "Already installed: ${1}"
   fi
