@@ -14,7 +14,7 @@ function install_yay {
 
   if [ $? -ne 0 ]; then
     echo "Installing: yay..."
-    sudo pacman -S --needed --no-confirm git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd .. && rm -rf yay
+    sudo pacman -S --needed --noconfirm git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd .. && rm -rf yay
   else
     echo "Already installed: yay"
   fi

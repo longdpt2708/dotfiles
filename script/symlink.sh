@@ -18,3 +18,5 @@ linkDotfile .config/nvim
 linkDotfile .config/picom
 linkDotfile .config/rofi
 linkDotfile .config/sxhkd
+linkDotfile .config/neofetch
+linkDotfile .config/Thunar
