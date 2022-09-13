@@ -74,15 +74,25 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  dracula = {
+  ["dracula.nvim"] = {
     loaded = true,
-    path = "/home/longdo/.local/share/nvim/site/pack/packer/start/dracula",
-    url = "https://github.com/dracula/vim"
+    path = "/home/longdo/.local/share/nvim/site/pack/packer/start/dracula.nvim",
+    url = "https://github.com/Mofiqul/dracula.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/longdo/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  ["nvim-lspconfig"] = {
+    loaded = true,
+    path = "/home/longdo/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/home/longdo/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
@@ -93,6 +103,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/longdo/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
+  },
+  playground = {
+    loaded = true,
+    path = "/home/longdo/.local/share/nvim/site/pack/packer/start/playground",
+    url = "https://github.com/nvim-treesitter/playground"
   }
 }
 

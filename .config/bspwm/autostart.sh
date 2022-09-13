@@ -16,3 +16,5 @@ pulseaudio-equalizer enable &>/dev/null & app hset &
 $HOME/.config/polybar/launch.sh &
 
 $HOME/.script/ibus.sh &
+
+alias lf="$HOME/.local/bin/lfub"

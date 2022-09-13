@@ -20,3 +20,10 @@ linkDotfile .config/rofi
 linkDotfile .config/sxhkd
 linkDotfile .config/neofetch
 linkDotfile .config/Thunar
+linkDotfile .config/lf
+
+# linkDotfile .xinitrc
+
+
+
+# linkDotfile .local/bin/lfub
