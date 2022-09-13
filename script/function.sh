@@ -1,5 +1,5 @@
 function install_by_pacman {
-  pacman -Qs $1 &> /dev/null
+  pacman -Q $1 &> /dev/null
   if [ $? -ne 0 ] ; then
     echo "Installing: ${1}..."
     sudo pacman -S --needed --noconfirm $1
@@ -22,7 +22,7 @@ function install_yay {
 }
 
 function install {
-  yay -Qs $1 &> /dev/null
+  yay -Q $1 &> /dev/null
   if [ $? -ne 0 ] ; then
     echo "Installing: ${1}..."
     yay -S --save --answerclean All --answerdiff All --nocleanmenu --nodiffmenu --noconfirm $1
