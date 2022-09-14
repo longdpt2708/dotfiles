@@ -31,4 +31,4 @@ linkDotfile .p10k.zsh
 
 
 
-# linkDotfile .local/bin/lfub
+linkDotfile .local/bin/lfub

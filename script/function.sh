@@ -70,7 +70,7 @@ function install_zsh_autosuggestions {
 }
 
 function install_zsh_syntax_highlighting {
-  if [ -d ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions ]; then
+  if [ -d ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting ]; then
 	  echo "Already installed:: zsh-syntax-highlighting"
   else
  	  echo "zsh-syntax-highlighting is not installed"
