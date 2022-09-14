@@ -35,7 +35,9 @@ install_zsh_syntax_highlighting
 
 # nvm
 install nvm
+# install_powerline_font
 
 # font
-# install ttf-dejavu
+# install nerd-fonts-fira-code
+# install nerd-fonts-dejavu-complete
 # install xfce-polkit

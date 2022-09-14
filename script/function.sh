@@ -78,14 +78,35 @@ function install_zsh_syntax_highlighting {
   fi
 }
 
-# function install_by_git {
-#   which $1 &> /dev/null
+function mkdir_local_bin {
+  if [ -d ${HOME}/.local/bin ]; then
+  else
+    echo "Create directoty: ${HOME}/.local/bin"
+    mkdir -p ${HOME}/.local/bin
+  fi
 
-#   if [ $? -ne 0 ]; then
-#     echo "Installing: ${1}..."
-#     sudo pacman -S --needed --no-confirm git base-devel && git clone https://aur.archlinux.org/yay.git && cd $1 && makepkg -si && cd .. && rm -rf yay
-#   else
-#     echo "Already installed: ${1}"
-#   fi
+}
 
+function mkdir_local_share_fonts {
+  if [ -d ${HOME}/.local/share/fonts ]; then
+  else
+    echo "Create directoty: ${HOME}/.local/share/fonts"
+    mkdir -p ${HOME}/.local/share/fonts
+  fi
+
+}
+
+# function install_powerline_font {
+#   # clone
+#   git clone https://github.com/powerline/fonts.git --depth=1
+#   # install
+#   cd fonts
+#   ./install.sh
+#   # clean-up a bit
+#   cd ..
+#   rm -rf fonts
+# }
+# function install_font {
+#   mkdir -p ~/.local/share/fonts
+#   cd ~/.local/share/fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete.otf
 # }
