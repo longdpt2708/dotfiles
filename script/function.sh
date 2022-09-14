@@ -65,7 +65,7 @@ function install_zsh_autosuggestions {
 	  echo "Already installed:: zsh-autosuggestions"
   else
  	  echo "zsh-autosuggestions is not installed"
-    git clone git://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
   fi
 }
 
