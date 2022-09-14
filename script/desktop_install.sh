@@ -3,6 +3,7 @@ source ./script/function.sh
 
 install_by_pacman polybar
 install_by_pacman rofi
+install_by_pacman rofi-emoji
 install_by_pacman picom
 install_by_pacman dunst
 install_by_pacman neovim
@@ -31,6 +32,9 @@ install_oh_my_zsh
 install_pk10
 install_zsh_autosuggestions
 install_zsh_syntax_highlighting
+
+# nvm
+install nvm
 
 # font
 # install ttf-dejavu
