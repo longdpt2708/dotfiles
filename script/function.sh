@@ -98,17 +98,13 @@ function mkdir_local_share_fonts {
 
 }
 
-# function install_powerline_font {
-#   # clone
-#   git clone https://github.com/powerline/fonts.git --depth=1
-#   # install
-#   cd fonts
-#   ./install.sh
-#   # clean-up a bit
-#   cd ..
-#   rm -rf fonts
-# }
-# function install_font {
-#   mkdir -p ~/.local/share/fonts
-#   cd ~/.local/share/fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete.otf
-# }
+function install_powerline_font {
+  # clone
+  git clone https://github.com/ryanoasis/nerd-fonts.git --depth=1
+  # install
+  cd nerd-fonts
+  ./install.sh --ttf Meslo Hack SourceCodePro JetBrainsMono FiraCode DejaVuSansMono
+  # clean-up a bit
+  cd ..
+  rm -rf nerd-fonts
+}
