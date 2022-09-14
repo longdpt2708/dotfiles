@@ -80,6 +80,7 @@ function install_zsh_syntax_highlighting {
 
 function mkdir_local_bin {
   if [ -d ${HOME}/.local/bin ]; then
+    echo "Directoty ${HOME}/.local/bin is exists"
   else
     echo "Create directoty: ${HOME}/.local/bin"
     mkdir -p ${HOME}/.local/bin
@@ -89,6 +90,7 @@ function mkdir_local_bin {
 
 function mkdir_local_share_fonts {
   if [ -d ${HOME}/.local/share/fonts ]; then
+    echo "Directoty ${HOME}/.local/share/fonts is exists"
   else
     echo "Create directoty: ${HOME}/.local/share/fonts"
     mkdir -p ${HOME}/.local/share/fonts
