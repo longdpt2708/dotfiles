@@ -27,6 +27,7 @@ install atool
 
 # zsh
 install zsh
+mk_zsh_history
 chshelltozsh
 install_oh_my_zsh
 install_pk10

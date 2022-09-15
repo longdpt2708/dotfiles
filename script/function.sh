@@ -95,7 +95,15 @@ function mkdir_local_share_fonts {
     echo "Create directoty: ${HOME}/.local/share/fonts"
     mkdir -p ${HOME}/.local/share/fonts
   fi
+}
 
+function mk_zsh_history {
+  if [ -f ${HOME}/.zsh_history ]; then
+    echo "Directoty ${HOME}/.local/share/fonts is exists"
+  else
+    echo "Create directoty: ${HOME}/.zsh_history"
+    touch ${HOME}/.zsh_history
+  fi
 }
 
 function install_powerline_font {
