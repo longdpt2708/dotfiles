@@ -1,3 +1,5 @@
+#!/bin/bash
+
 source ./script/function.sh
 install_yay
 mkdir_local_bin

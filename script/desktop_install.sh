@@ -42,3 +42,11 @@ install nvm
 # install nerd-fonts-fira-code
 # install nerd-fonts-dejavu-complete
 # install xfce-polkit
+
+# tmux
+install tmux-bash-completion-git
+install_tpm
+
+# lockscreen
+install_by_pacman lightdm-webkit2-greeter
+install_lightdm_webkit2_greeter_theme_glorious

@@ -35,14 +35,7 @@ select opt in "${options[@]}"; do
 	    # optionally call a function or run some code here
             ;;
         "Install Nerd-Fonts")
-            # clone
-            git clone https://github.com/ryanoasis/nerd-fonts.git --depth=1
-            # install
-            cd nerd-fonts
-            ./install.sh --ttf Meslo Hack SourceCodePro JetBrainsMono FiraCode DejaVuSansMono Iosevka
-            # clean-up a bit
-            cd ..
-            rm -rf nerd-fonts
+            ./script/nert_fonts_install.sh
 	    # optionally call a function or run some code here
 	    break
             ;;

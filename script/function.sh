@@ -1,3 +1,5 @@
+#!/bin/bash
+
 function install_by_pacman {
   pacman -Q $1 &> /dev/null
   if [ $? -ne 0 ] ; then
@@ -62,7 +64,7 @@ function install_oh_my_zsh {
 
 function install_zsh_autosuggestions {
   if [ -d ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions ]; then
-	  echo "Already installed:: zsh-autosuggestions"
+	  echo "Already installed: zsh-autosuggestions"
   else
  	  echo "zsh-autosuggestions is not installed"
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
@@ -71,7 +73,7 @@ function install_zsh_autosuggestions {
 
 function install_zsh_syntax_highlighting {
   if [ -d ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting ]; then
-	  echo "Already installed:: zsh-syntax-highlighting"
+	  echo "Already installed: zsh-syntax-highlighting"
   else
  	  echo "zsh-syntax-highlighting is not installed"
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
@@ -103,16 +105,46 @@ function mk_zsh_history {
   else
     echo "Create directoty: ${HOME}/.zsh_history"
     touch ${HOME}/.zsh_history
+    mv ~/.zsh_history ~/.zsh_history_bad
+    strings -eS ~/.zsh_history_bad > ~/.zsh_history
+    rm ~/.zsh_history_bad
   fi
 }
 
-function install_powerline_font {
-  # clone
-  git clone https://github.com/ryanoasis/nerd-fonts.git --depth=1
-  # install
-  cd nerd-fonts
-  ./install.sh --ttf Meslo Hack SourceCodePro JetBrainsMono FiraCode DejaVuSansMono
-  # clean-up a bit
-  cd ..
-  rm -rf nerd-fonts
+# function install_powerline_font {
+#   # clone
+#   git clone https://github.com/ryanoasis/nerd-fonts.git --depth=1
+#   # install
+#   cd nerd-fonts
+#   ./install.sh --ttf Meslo Hack SourceCodePro JetBrainsMono FiraCode DejaVuSansMono
+#   # clean-up a bit
+#   cd ..
+#   rm -rf nerd-fonts
+# }
+
+function install_lightdm_webkit2_greeter_theme_glorious {
+   if [ -f /usr/share/lightdm-webkit/themes/glorious ]; then
+    echo "Already installed: lightdm-webkit2-greeter-theme-glorious"
+  else
+    # clone
+    git clone https://github.com/manilarome/lightdm-webkit2-theme-glorious.git --depth=1
+    # install
+    cp -r lightdm-webkit2-theme-glorious /usr/share/lightdm-webkit/themes/glorious
+    # clean-up a bit
+    rm -rf lightdm-webkit2-theme-glorious
+    # Set default lightdm greeter to lightdm-webkit2-greeter
+    sudo sed -i 's/^\(#?greeter\)-session\s*=\s*\(.*\)/greeter-session = lightdm-webkit2-greeter #\1/ #\2g' /etc/lightdm/lightdm.conf
+    # Set default lightdm-webkit2-greeter theme to Glorious
+    sudo sed -i 's/^webkit_theme\s*=\s*\(.*\)/webkit_theme = glorious #\1/g' /etc/lightdm/lightdm-webkit2-greeter.conf
+    sudo sed -i 's/^debug_mode\s*=\s*\(.*\)/debug_mode = true #\1/g' /etc/lightdm/lightdm-webkit2-greeter.conf
+  fi
+}
+
+function install_tpm {
+   if [ -d ${HOME}/.config/tpm/plugins/tpm ]; then
+    echo "Already installed: tpm"
+  else
+    # clone
+    git clone https://github.com/tmux-plugins/tpm ${HOME}/.config/tpm/plugins/tpm
+  fi
 }
