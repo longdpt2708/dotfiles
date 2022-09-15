@@ -28,7 +28,7 @@ linkDotfile .zshrc
 linkDotfile .p10k.zsh
 
 linkDotfile .xinitrc
-linkDotfile .config/tmux/tmux.conf
+linkDotfile .config/tmux
 
 
 
