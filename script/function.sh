@@ -129,7 +129,7 @@ function install_lightdm_webkit2_greeter_theme_glorious {
     # clone
     git clone https://github.com/manilarome/lightdm-webkit2-theme-glorious.git --depth=1
     # install
-    cp -r lightdm-webkit2-theme-glorious /usr/share/lightdm-webkit/themes/glorious
+    sudo cp -r lightdm-webkit2-theme-glorious /usr/share/lightdm-webkit/themes/glorious
     # clean-up a bit
     rm -rf lightdm-webkit2-theme-glorious
     # Set default lightdm greeter to lightdm-webkit2-greeter

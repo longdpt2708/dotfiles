@@ -110,7 +110,24 @@
 #multiplier: 3
 
 # Font configuration
-#font:
+font:
+  normal:
+    family: MesloLGS Nerd Font
+    style: Regular
+
+  bold:
+    family: MesloLGS Nerd Font
+    style: Bold
+
+  italic:
+    family: MesloLGS Nerd Font
+    style: Italic
+
+  bold_italic:
+    family: MesloLGS Nerd Font
+    style: Bold Italic
+
+# font:
 # Normal (roman) font face
 #normal:
 # Font family
@@ -119,7 +136,7 @@
 #   - (macOS) Menlo
 #   - (Linux/BSD) monospace
 #   - (Windows) Consolas
-#family: monospace
+# family: JetBrains
 
 # The `style` can be specified to pick a specific face.
 #style: Regular

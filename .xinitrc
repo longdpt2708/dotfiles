@@ -20,5 +20,5 @@ fi
 # urxvtd -q -o -f
 
 #exec herbstluftwm --locked
-sxhkd &
+# sxhkd &
 exec bspwm
