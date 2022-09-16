@@ -24,6 +24,12 @@ install ueberzug
 install man
 install lynx
 install atool
+install_by_pacman unzip
+install_by_pacman fzf
+
+# mpv
+install_by_pacman mpv
+install_mpv_themes
 
 # zsh
 install zsh

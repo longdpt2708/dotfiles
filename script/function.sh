@@ -35,7 +35,7 @@ function install {
 
 function chshelltozsh {
   currentShell=$SHELL
-  if [ $currentShell == "/usr/bin/zsh" ] ; then
+  if [ $currentShell == "/bin/zsh" ] ; then
     echo "Current Shell is ZSH"
   else
     echo "Change Shell to ZSH"
@@ -87,7 +87,6 @@ function mkdir_local_bin {
     echo "Create directoty: ${HOME}/.local/bin"
     mkdir -p ${HOME}/.local/bin
   fi
-
 }
 
 function mkdir_local_share_fonts {
@@ -147,4 +146,28 @@ function install_tpm {
     # clone
     git clone https://github.com/tmux-plugins/tpm ${HOME}/.config/tpm/plugins/tpm
   fi
+}
+
+function mkdir_if_not_exists {
+  if [ -d $1 ]; then
+    echo "Directoty ${1} is exists"
+  else
+    echo "Create directoty: ${1}"
+    mkdir -p $1
+  fi
+}
+
+function install_mpv_themes {
+  #  if [ -d ${HOME}/.config/tpm/plugins/tpm ]; then
+  #   echo "Already installed: tpm"
+  # else
+    # clone
+    git clone https://github.com/maoiscat/mpv-osc-modern
+    mkdir_if_not_exists ${HOME}/.config/mpv/scripts
+    mv mpv-osc-modern/modern.lua ~/.config/mpv/scripts
+
+    mkdir_if_not_exists ${HOME}/.config/mpv/fonts
+    mv mpv-osc-modern/Material-Design-Iconic-Font.ttf ~/.config/mpv/fonts
+    rm -rf mpv-osc-modern
+  # fi
 }
