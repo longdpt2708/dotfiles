@@ -133,6 +133,8 @@ function install_lightdm_webkit2_greeter_theme_glorious {
     rm -rf lightdm-webkit2-theme-glorious
     # Set default lightdm greeter to lightdm-webkit2-greeter
     sudo sed -i 's/^\(#?greeter\)-session\s*=\s*\(.*\)/greeter-session = lightdm-webkit2-greeter #\1/ #\2g' /etc/lightdm/lightdm.conf
+    # Set default lightdm greeter to lightdm-webkit2-greeter
+    sudo sed -i 's/^\(#?greeter\)-session\s*=\s*\(.*\)/greeter-session = lightdm-webkit2-greeter #\1/ #\2g' /etc/lightdm/lightdm.conf
     # Set default lightdm-webkit2-greeter theme to Glorious
     sudo sed -i 's/^webkit_theme\s*=\s*\(.*\)/webkit_theme = glorious #\1/g' /etc/lightdm/lightdm-webkit2-greeter.conf
     sudo sed -i 's/^debug_mode\s*=\s*\(.*\)/debug_mode = true #\1/g' /etc/lightdm/lightdm-webkit2-greeter.conf
