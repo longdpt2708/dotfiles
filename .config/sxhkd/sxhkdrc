@@ -75,10 +75,10 @@ super + {grave,Tab}
 	bspc {node,desktop} -f last
 
 # focus the older or newer node in the focus history
-super + {o,i}
-	bspc wm -h off; \
-	bspc node {older,newer} -f; \
-	bspc wm -h on
+# super + {o,i}
+# 	bspc wm -h off; \
+# 	bspc node {older,newer} -f; \
+# 	bspc wm -h on
 
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
@@ -122,10 +122,13 @@ super + {Left,Down,Up,Right}
 
 # custom
 super + shift + e
-  rofi -show emoji
+  rofi -modi emoji -show emoji
 
 super + button{5,4}
     bspc desktop {next,prev}.occupied -f
 
 super + button2
     bspc desktop any.!occupied -f
+
+super + o;{e,g,c}
+  {thunar,google-chrome-stable,code}
