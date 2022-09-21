@@ -137,8 +137,10 @@ toggle_connection() {
 
 # Checks if a device is paired
 device_paired() {
-    device_info=$(bluetoothctl info "$1")
-    if echo "$device_info" | grep -q "Paired: yes"; then
+     # device_info=$(bluetoothctl info "$1")
+    # if echo "$device_info" | grep -q "Connected: yes"; then
+    bluetoothctl info $1 | grep -q "Paired: yes" &> /dev/null
+    if [ $? -eq 0 ]; then
         echo "Paired: yes"
         return 0
     else
@@ -160,8 +162,11 @@ toggle_paired() {
 
 # Checks if a device is trusted
 device_trusted() {
-    device_info=$(bluetoothctl info "$1")
-    if echo "$device_info" | grep -q "Trusted: yes"; then
+      # device_info=$(bluetoothctl info "$1")
+    # if echo "$device_info" | grep -q "Connected: yes"; then
+    # if echo "$device_info" | grep -q "Trusted: yes"; then
+    bluetoothctl info $1 | grep -q "Trusted: yes" &> /dev/null
+    if [ $? -eq 0 ]; then
         echo "Trusted: yes"
         return 0
     else
@@ -187,7 +192,13 @@ print_status() {
     if power_on; then
         printf ''
 
-        mapfile -t paired_devices < <(bluetoothctl devices Paired | cut -d ' ' -f 2)
+        paired_devices_cmd="devices Paired"
+        # Check if an outdated version of bluetoothctl is used to preserve backwards compatibility
+        # if (( $(echo "$(bluetoothctl version | cut -d ' ' -f 2) < 5.65" | bc -l) )); then
+        #     paired_devices_cmd="paired-devices"
+        # fi
+
+        mapfile -t paired_devices < <(bluetoothctl $paired_devices_cmd | grep Device | cut -d ' ' -f 2)
         counter=0
 
         for device in "${paired_devices[@]}"; do

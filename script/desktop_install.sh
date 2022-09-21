@@ -8,6 +8,7 @@ install_by_pacman picom
 install_by_pacman dunst
 install_by_pacman neovim
 install nvim-packer-git
+install bluez-utils
 
 # file manager
 install_by_pacman thunar
