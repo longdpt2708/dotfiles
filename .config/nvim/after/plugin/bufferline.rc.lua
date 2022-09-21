@@ -1,35 +1,69 @@
 local status, bufferline = pcall(require, "bufferline")
 if (not status) then return end
 
+local status_dracula, dracula = pcall(require, "dracula")
+if (not status_dracula) then return end
+
+
+local colors = require('dracula').colors()
 
 
 bufferline.setup({
   options = {
-    mode = "tabs",
+    -- mode = "tabs",
     separator_style = 'slant',
-    always_show_bufferline = false,
-    show_buffer_close_icons = false,
-    show_close_icon = false,
-    color_icons = true
+    show_buffer_icons = true,
+    show_buffer_close_icons = true,
+    show_close_icon = true,
+    -- show_tab_indicators = true,
+    color_icons = true,
+
+    -- sort_by = function(buffer_a, buffer_b)
+    --     print(vim.inspect(buffer_a))
+    --     -- add custom logic
+    --     return buffer_a.modified > buffer_b.modified
+    -- end,
+    always_show_bufferline = true,
+    enforce_regular_tabs = true,
+    diagnostics = "nvim_lsp",
+    -- hover = {
+    --          enabled = true,
+    --          delay = 200,
+    --          reveal = {'close'}
+    --      },
+    offsets = {
+     {
+       filetype = "NvimTree",
+       text = function()
+         return vim.fn.getcwd()
+       end,
+       highlight = "Directory",
+       text_align = "left"
+     }
+   },
+   close_command = function(bufnum)
+        require('bufdelete').bufdelete(bufnum, true)
+    end
   },
+
   highlights = {
     separator = {
-      fg = '#073642',
-      bg = '#002b36',
+      fg = colors.black,
+      bg = colors.menu,
     },
     separator_selected = {
-      fg = '#073642',
+      fg = colors.black,
     },
     background = {
       fg = '#657b83',
-      bg = '#002b36'
+      bg = colors.menu,
     },
     buffer_selected = {
       fg = '#fdf6e3',
       bold = true,
     },
     fill = {
-      bg = '#073642'
+      bg = colors.black,
     }
   },
 })

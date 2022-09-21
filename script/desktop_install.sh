@@ -16,6 +16,7 @@ install_by_pacman gvfs-mtp
 install_by_pacman thunar-volman
 install xfce-polkit
 install_by_pacman udisks2
+install_by_pacman xclip
 
 # file manager terminal
 install lf
@@ -26,6 +27,12 @@ install lynx
 install atool
 install_by_pacman unzip
 install_by_pacman fzf
+install fd
+
+# themes gtk
+install_by_pacman lxappearance
+install_gtk_dracula
+install_gtk_dracula_icon
 
 # mpv
 install_by_pacman mpv

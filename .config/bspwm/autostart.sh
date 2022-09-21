@@ -7,7 +7,10 @@ function run {
   fi
 }
 # Autostart
-picom -CGb --fade-in-step=1 --fade-out-step=1 --fade-delta=0 &
+# picom -CGb &
+# picom -c --fade-in-step=1 --fade-out-step=1 --fade-delta=0 &
+picom --experimental-backends -b --fade-in-step=1 --fade-out-step=1 --fade-delta=0  &
+# picom -b --animations --animation-window-mass 0.5 --animation-for-open-window zoom --animation-stiffness 350 &
 nitrogen --restore &
 dunst &
 pulseaudio-equalizer enable &>/dev/null & app hset &
@@ -18,5 +21,3 @@ pulseaudio-equalizer enable &>/dev/null & app hset &
 $HOME/.config/polybar/launch.sh &
 
 $HOME/.script/ibus.sh &
-
-alias lf="$HOME/.local/bin/lfub"

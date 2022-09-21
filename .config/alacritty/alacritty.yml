@@ -63,6 +63,10 @@
 #     - transparent: Title bar, transparent background and title bar buttons
 #     - buttonless: Title bar, transparent background and no title bar buttons
 #decorations: full
+window:
+  padding:
+    x: 0
+    y: 0
 
 # Background opacity
 #

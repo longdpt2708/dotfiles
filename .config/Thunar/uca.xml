@@ -10,4 +10,14 @@
 	<startup-notify/>
 	<directories/>
 </action>
+<action>
+	<icon>edit-copy-path</icon>
+	<name>Copy Location</name>
+	<unique-id>1663762319488760-1</unique-id>
+	<command>/usr/bin/xclip -selection clipboard -t &quot;$(file -b --mime-type %f)&quot; &lt; %f</command>
+	<description></description>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+</action>
 </actions>

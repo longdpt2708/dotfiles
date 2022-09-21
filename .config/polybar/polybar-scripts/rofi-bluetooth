@@ -114,8 +114,10 @@ toggle_discoverable() {
 
 # Checks if a device is connected
 device_connected() {
-    device_info=$(bluetoothctl info "$1")
-    if echo "$device_info" | grep -q "Connected: yes"; then
+    # device_info=$(bluetoothctl info "$1")
+    # if echo "$device_info" | grep -q "Connected: yes"; then
+    bluetoothctl info $1 | grep -q "Connected: yes" &> /dev/null
+    if [ $? -eq 0 ]; then
         return 0
     else
         return 1
@@ -185,7 +187,7 @@ print_status() {
     if power_on; then
         printf ''
 
-        mapfile -t paired_devices < <(bluetoothctl devices Paired | grep Device | cut -d ' ' -f 2)
+        mapfile -t paired_devices < <(bluetoothctl devices Paired | cut -d ' ' -f 2)
         counter=0
 
         for device in "${paired_devices[@]}"; do

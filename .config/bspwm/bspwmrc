@@ -2,6 +2,8 @@
 
 #LAUNCHERS
 $HOME/.config/bspwm/autostart.sh
+$HOME/.config/bspwm/alias.sh
+$HOME/.config/bspwm/default.sh
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
@@ -11,7 +13,7 @@ xrandr --output HDMI-0 --primary --mode 2560x1440 --rate 59.95
 #xrandr --output DP-2 --left-of DP-4 --mode 1920x1080 --rate 60.00
 
 #Single monitor
-bspc monitor -d 1 2 3 4 5 6 7 8 9
+bspc monitor -d 1 2 3 4 5 6 7
 
 bspc config border_width         2
 bspc config window_gap          12

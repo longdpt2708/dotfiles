@@ -1,5 +1,6 @@
 local status, telescope = pcall(require, "telescope")
 if (not status) then return end
+
 local actions = require('telescope.actions')
 local builtin = require("telescope.builtin")
 
@@ -22,6 +23,16 @@ telescope.setup {
       require("telescope.themes").get_dropdown {
         -- even more opts
       }
+    },
+     repo = {
+      list = {
+        fd_opts = {
+          "--no-ignore-vcs",
+        },
+        search_dirs = {
+          "~/my_projects",
+        },
+      },
     },
     file_browser = {
       theme = "dropdown",
@@ -88,3 +99,8 @@ end)
 local status_ui_select, ui_select = pcall(require, "ui-select")
 if (not status_ui_select) then return end
 require("telescope").load_extension("ui-select")
+
+
+
+-- require('telescope').load_extension('project')
+require'telescope'.load_extension'repo'

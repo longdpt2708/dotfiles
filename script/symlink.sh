@@ -21,6 +21,7 @@ linkDotfile .config/sxhkd
 linkDotfile .config/neofetch
 linkDotfile .config/Thunar
 linkDotfile .config/lf
+linkDotfile .config/nitrogen
 
 
 

@@ -19,25 +19,43 @@ packer.startup(function(use)
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
   use 'onsails/lspkind-nvim' -- vscode-like pictograms
-  use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
   use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in LSP
   use 'hrsh7th/nvim-cmp' -- Completion
   use 'L3MON4D3/LuaSnip'
-  use 'jose-elias-alvarez/null-ls.nvim'
-  -- use 'windwp/nvim-autopairs'
-  -- use 'windwp/nvim-ts-autotag'
+  use 'windwp/nvim-autopairs' -- auto close tag {} "" ''
+  use 'windwp/nvim-ts-autotag' -- auto close tag html
   use 'norcalli/nvim-colorizer.lua'
   use 'glepnir/lspsaga.nvim' -- LSP UIs
+  use({
+    "jose-elias-alvarez/null-ls.nvim", -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
+    config = function()
+        require("null-ls").setup()
+    end,
+    requires = { "nvim-lua/plenary.nvim" },
+  })
+  use 'MunifTanjim/prettier.nvim' -- Prettier plugin for Neovim's built-in LSP client
+
+ -- Project
+  use "ahmedkhalf/project.nvim"
+  use "windwp/nvim-spectre"
+
+  -- Bufferline
   use {
     'akinsho/bufferline.nvim',
     tag = "v2.*",
     requires = 'kyazdani42/nvim-web-devicons'}
+  use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
+  use 'famiu/bufdelete.nvim'
   use {
     'rmagatti/goto-preview',
     config = function()
       require('goto-preview').setup {}
     end
   }
+
+  -- Comment
+  use "numToStr/Comment.nvim"
+  use "folke/todo-comments.nvim"
 
   -- Telescope
   use {
@@ -46,6 +64,7 @@ packer.startup(function(use)
   }
   use 'nvim-telescope/telescope-file-browser.nvim'
   use 'nvim-telescope/telescope-ui-select.nvim'
+  use 'cljoly/telescope-repo.nvim'
 
   -- Treesitter
   use {
@@ -62,7 +81,7 @@ packer.startup(function(use)
 
   -- Git
   use 'lewis6991/gitsigns.nvim'
-
+  use "f-person/git-blame.nvim"
 
   -- Dashborad
   use {
@@ -95,6 +114,11 @@ packer.startup(function(use)
   }
   use 'mxsdev/nvim-dap-vscode-js'
 
+  -- Terminal
+  use {
+    "akinsho/toggleterm.nvim",
+     tag = '*',
+  }
  end)
 
  vim.cmd[[colorscheme dracula]]

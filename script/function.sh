@@ -173,3 +173,22 @@ function install_mpv_themes {
     rm -rf mpv-osc-modern
   # fi
 }
+
+
+function install_gtk_dracula {
+  if [ -d /usr/share/themes/Dracula ]; then
+	  echo "Already installed: GTK Dracula"
+  else
+ 	  echo "GTK Dracula is not installed"
+    sudo git clone https://github.com/dracula/gtk.git /usr/share/themes/Dracula
+  fi
+}
+
+function install_gtk_dracula_icon {
+  if [ -d /usr/share/icons/Dracula ]; then
+	  echo "Already installed: GTK Dracula Icon"
+  else
+ 	  echo "GTK Dracula Icon is not installed"
+    sudo git clone https://github.com/m4thewz/dracula-icons /usr/share/icons/Dracula
+  fi
+}
