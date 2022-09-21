@@ -3,9 +3,9 @@
 # finds the active sink for pulse audio and increments the volume. useful when you have multiple audio outputs and have a key bound to vol-up and down
 
 osd='no'
-inc='2'
+inc='5'
 capvol='no'
-maxvol='200'
+maxvol='150'
 autosync='yes'
 
 # Muted status
