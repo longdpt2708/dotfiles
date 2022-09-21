@@ -38,6 +38,7 @@ bspc config merge_overlapping_monitors true
 
 # Rule custom
 bspc rule -a Alacritty state=floating
+bspc rule -a Pavucontrol state=floating
 
 # themes dracula
 bspc config normal_border_color "#44475a"
